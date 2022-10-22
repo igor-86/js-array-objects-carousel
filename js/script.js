@@ -44,8 +44,44 @@ images.forEach((courrentItems) => {
 
 //Preparo lo Slider nella posizione iniziale
 const sliderItems = document.getElementsByClassName("box-items");
+const buttonNext = document.querySelector(".next");
+const buttonPrev = document.querySelector(".prev");
 
 let activeItem = 0;
 sliderItems[activeItem].classList.add("active");
 /* ____________________________________ */
+
+//Event next
+buttonNext.addEventListener("click", nextSlider);
+buttonPrev.addEventListener("click", prevSlider);
+
+//Slider setInterval
+
+/**
+ * Description Eseguire lo slider con una condizione if-else
+ * @returns {/}
+ */
+function nextSlider(){
+    sliderItems[activeItem].classList.remove("active");
+
+    if(activeItem < sliderItems.length - 1){
+        activeItem++;
+    }else{
+        activeItem = 0;
+    };
+//Aggiungo active item
+    sliderItems[activeItem].classList.add("active");
+}
+
+function prevSlider(){
+    sliderItems[activeItem].classList.remove("active");
+
+    if(activeItem > 0){
+        activeItem--;
+    } else{
+        activeItem = sliderItems.length - 1;
+    }
+
+    sliderItems[activeItem].classList.add("active");
+}
 
