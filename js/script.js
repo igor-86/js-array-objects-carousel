@@ -123,3 +123,22 @@ for (let i = 0; i < sliderThumb.length; i++) {
     });
 }
 
+//Set inerval
+
+setInterval(intervalSlider, 4000);
+
+function intervalSlider(){
+    sliderItems[activeItem].classList.remove("active");
+    sliderThumb[activeItem].classList.remove("active-thumb");
+
+    if(activeItem < sliderItems.length - 1){
+        activeItem++;
+    }else{
+        activeItem = 0;
+    };
+//Aggiungo active item
+    sliderItems[activeItem].classList.add("active");
+    sliderThumb[activeItem].classList.add("active-thumb"); 
+}
+
+
