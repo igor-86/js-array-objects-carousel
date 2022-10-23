@@ -21,13 +21,13 @@ body {
     position: relative;
     
 }
-.box-items {
+.item{
     width: 100%;
     height: 600px;
     display: none;
     
 }
-.box-items > img {
+.item > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -43,6 +43,38 @@ body {
 .active {
     display: block;
 }
+
+/* Thumbs */
+.thumbs {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0;
+}
+.thumb {
+    width: calc(100% / 5);
+    height: 150px;
+    overflow: hidden;
+}
+
+.thumb > img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s ease-in-out;
+}
+.thumb > img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.active-thumb {
+    border: 5px solid rgb(221, 221, 221);
+    position: relative;
+}
+
 .prev {
     position: absolute;
     left: 10px;
